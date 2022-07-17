@@ -1,0 +1,156 @@
+:root {
+    --bgcolor: #101032;
+    --borderColor: #6548c1;
+    --size: 8rem;
+    --Xcolor: #ed154f;
+    --Ocolor: #f7cd32;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bgcolor);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.container {
+    border-spacing: 0;
+    align-self: center;
+}
+
+.cell {
+    min-width: var(--size);
+    height: var(--size);
+    padding: calc(var(--size) * 0.175);
+    border: 10px solid var(--borderColor);
+}
+
+.row *:nth-child(2n+1) {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+.row .cell:nth-child(2) {
+    border-top: none;
+}
+
+.row:last-child .cell {
+    border-bottom: none;
+}
+
+.cell svg {
+    width: var(--size);
+    height: var(--size);
+    stroke-width: 3px;
+    overflow: visible;
+}
+
+.X {
+    display: none;
+    stroke: red;
+    stroke-dasharray: 36 36;
+    stroke-dashoffset: 36;
+    transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.O {
+    display: none;
+    stroke: var(--Ocolor);
+    stroke-dasharray: 76 76;
+    stroke-dashoffset: 76;
+    transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.playerSelect {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.3rem;
+    background-color: var(--bgcolor);
+    border: 2px solid var(--borderColor);
+    color: #fff;
+    font-size: 0.85rem;
+    display: block;
+}
+
+.scoreCard {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+    position: absolute;
+    top: 1rem;
+    left: 10rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.25rem;
+    padding: 5px;
+    border-right: 2px solid var(--borderColor);
+}
+
+.icon svg {
+    width: 90%;
+    height: 90%;
+    stroke-width: 3px;
+    overflow: visible;
+    display: block;
+    stroke-dasharray: none;
+    stroke-dashoffset: none;
+    transition: none;
+}
+
+.scoreCard>div {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid var(--borderColor);
+    height: 1.75rem;
+    cursor: pointer;
+}
+
+.scoreCard>.playerActive {
+    border-bottom-width: 4px;
+}
+
+.score {
+    display: flex;
+    width: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.resetBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    font-family: sans-serif;
+    border: 2px solid var(--borderColor);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.winner {
+    display: none;
+    position: absolute;
+    bottom: 3rem;
+    color: #fff;
+    font-size: 2.5rem;
+    gap: 0.5rem;
+}
+
+.winner .icon {
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+}

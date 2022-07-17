@@ -1,0 +1,57 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="{% static 'tstyle.css' %}">
+    <script src="{% static 'tictactoe.js' %}"></script>
+</head>
+
+<body>
+    <div class="top-left">
+        <select class="playerSelect">
+            <option value="" selected hidden disabled>Select Player</option>
+            <option value="human">Friend</option>
+        </select>
+        <div class="scoreCard">
+            <div class="x-score playerActive">
+                <div class="icon"></div>
+                <div class="score">0</div>
+            </div>
+            <div class="o-score playerActive">
+                <div class="icon"></div>
+                <div class="score">0</div>
+            </div>
+        </div>
+    </div>
+    <table class="container">
+        <tr class="row row1">
+            <td class="cell cell1"></td>
+            <td class="cell cell2"></td>
+            <td class="cell cell3"></td>
+        </tr>
+        <tr class="row row2">
+            <td class="cell cell1"></td>
+            <td class="cell cell2"></td>
+            <td class="cell cell3"></td>
+        </tr>
+        <tr class="row row3">
+            <td class="cell cell1"></td>
+            <td class="cell cell2"></td>
+            <td class="cell cell3"></td>
+        </tr>
+    </table>
+    <div class="resetBtn">RESET</div>
+    <div class="resetBtn" style="margin-top: 30px; text-decoration: none; background-color: rgb(196, 216, 255);"><a href="/index/">Go Back</a></div>
+    <div class="winner">
+        <div class="icon"></div>
+    </div>
+    <script src="{% static 'sketch.js' %}"></script>
+</body>
+
+
+</html>
